@@ -1,0 +1,11 @@
+<% content_for :title, "Editing friend" %>
+<br />
+<h1>Editing friend</h1>
+
+<%= render "form", friend: @friend %>
+
+<br/>
+<div>
+  <%= link_to "Show", @friend, class: "btn btn-info" %>
+  <%= link_to "Back to friends", friends_path, class: "btn btn-info" %>
+</div>

@@ -1,0 +1,32 @@
+<% content_for :title, "Friends" %>
+<br/>
+<h1>Friends</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">User ID</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <% @friends.each do |friend| %>
+    <tbody>
+      <tr class="align-middle">
+        <td><%= friend.first_name %></td>
+        <td><%= friend.last_name %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.user_id %></td>
+        <td><%= link_to "Show", friend, class: "btn btn-info" %></td>
+        <td><%= link_to "Edit", edit_friend_path(friend), class: "btn btn-info" %></td>
+        <td><%= button_to "Delete", friend, method: :delete, data: {turbo_confirm: "Sure?"}, class: "btn btn-info" %></td>
+      </tr>
+    </tbody>
+  <% end %> 
+</table>
+
+<%= link_to "Add friend", new_friend_path, class: "btn btn-info" %>
